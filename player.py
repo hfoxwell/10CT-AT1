@@ -4,11 +4,12 @@ import app  # Contains global settings like WIDTH, HEIGHT, PLAYER_SPEED, etc.
 class Player:
     def __init__(self, x, y, assets):
         """Initialize the player with position and image assets."""
-        # TODO: 1. Store the player's position
-        # e.g. self.x = x, self.y = y
+        # Initialise Player's x and Y position
+        self.x = x
+        self.y = y
 
         # TODO: 2. Load the player's image from assets
-        # For example: self.image = assets["player_idle"][0]
+        self.image = assets["player_idle"][0]
         # (or some default image key in assets)
 
         self.speed = app.PLAYER_SPEED
@@ -20,9 +21,10 @@ class Player:
 
         # TODO: 3. Create a collision rectangle (self.rect) 
         # For example: 
-        # self.rect = self.image.get_rect(center=(self.x, self.y))
+        self.rect = self.image.get_rect(center=(self.x, self.y))
 
         # TODO: 4. Add player health 
+        self.health = 5
 
     def handle_input(self):
         """Check and respond to keyboard/mouse input."""
